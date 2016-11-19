@@ -1,0 +1,562 @@
+body, html{margin: 0 auto;padding: 0;height: 100%;width: 100%; font-family: 'vag rounded', sans-serif; color:#000; background: #da2128 !important;}
+
+section {position: relative; display: block; overflow: hidden; width: 100%; min-height: 100vh; visibility: hidden;}
+	.wrapper {position: relative; display: block; overflow: hidden; width: 95%; height: 100%; max-width: 1200px; margin:0 auto;}
+	section > .wrapper {position: absolute; left: 0; right: 0;}
+
+/* -- LOADER -------------------------------------- */
+
+#loader {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000000; background-color: #d8242f;; background-size: cover; background-position: center;}
+	#loader img {position: absolute; top: 0; left: 0; width: 100%; display: block; transition: all .3s; z-index: 10;}
+		#gira {z-index: 1 !important; -webkit-animation: gira 1s linear infinite; -ms-animation: gira 1s linear infinite; animation: gira 1s linear infinite;}
+	#loader.close .wrap-loader img { -webkit-animation: initial !important; -ms-animation: initial !important; animation: initial !important; opacity: 0 !important; transform: scale(0) !important; -webkit-transform: scale(0) !important; -o-transform: scale(0) !important; -moz-transform: scale(0) !important;}
+		.wrap-loader {position: absolute; top: 50%; left: 0; right: 0; margin:0 auto; width: 200px; height: 200px; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+
+/* -- HOME -------------------------------------- */
+
+.home {background-image: url(../img/bg-home.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;}
+	
+	.home header, .faq header {position: fixed; top: 0; left: 0; padding-top: 4%; display: block; width: 100%; z-index: 100000; transition: all .3s;}
+		header.scrolled {padding-top: 2%;}
+		header .logo {position: relative; display: block; float: left; overflow: hidden; cursor: pointer;}
+			header .logo img {display: block; width: 100%; transition: all .3s;} 
+				header.scrolled .logo img {width: 150px;}
+				header .logo:hover img {opacity: .7 !important;}
+ 		header .main-nav {position: relative; float: right; display: block; padding-top: 10px;}
+ 		header.scroll .main-nav {padding-top: 5px;}
+			.main-nav > ul > li {display: inline-block; vertical-align: middle; transition: all .3s;}
+			//.main-nav > ul > li:nth-child(3) {margin-right: 15px;}
+			.main-nav > ul > li:last-child {background-color: #5d2e87; box-shadow: 0 0 0 2px transparent inset; border-radius: 40px;}
+				.main-nav > ul > li a {display: block; color: #fff; padding:18px 12px; font-size: 16px; text-transform: uppercase; transition: all .3s; font-weight: 700;}
+				.main-nav > ul > li:last-child a {padding:18px 20px; padding-bottom: 16px; }
+
+			header.osc .main-nav > ul > li:last-child {background-color: #30104D;}
+			.main-nav > ul > li:last-child:hover, .mundo .text a:hover, .main-nav > ul > li:last-child.active {box-shadow: 0 0 0 2px #5d2e87 inset !important; color: #5d2e87 !important; background-color: transparent;}
+			header.osc .main-nav > ul > li:last-child:hover, header.osc .main-nav > ul > li:last-child.active {box-shadow: 0 0 0 2px #30104D inset !important; color: #30104D !important; background-color: transparent !important;}
+			header.osc .main-nav > ul > li:hover a, header.osc .main-nav > ul > li.active a {color: #30104D !important;}
+			.main-nav > ul > li:hover a, .main-nav > ul > li.active a {color: #5d2e87 !important;}
+
+
+		.toggle-menu {position: relative; display: none; float: right; width: 35px; height: 25px; }
+			.toggle-menu span {position: absolute; top: 0; left: 0; width: 100%; border-radius: 3px; background-color: #fff; height: 5px; transition: all .3s; }
+				.toggle-menu span:nth-child(2) {top: 10px;}
+				.toggle-menu span:last-child {top: 20px;}
+			.toggle-menu.active span:first-child {-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg); top:9px !important; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg);}
+			.toggle-menu.active span:nth-child(2) {-webkit-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg); top: 9px !important; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);}
+			.toggle-menu.active span:last-child { opacity: 0 !important;}
+
+			.lang {position: relative; display: inline-block; vertical-align: middle; width: 110px; float: right; color: #fff; margin-top: 28px; margin-left: 14px;}
+				.audioguias .lang {margin-right: 60px;}
+				.lang a {display: inline-block; vertical-align: middle; font-size: 14px; color: #fff; transition: all .3s;}
+				.lang a.active {font-weight: 700;}
+				.lang a {margin-right: 7px; padding-right: 7px; border-right: solid 1px #fff;}
+				.lang a:last-child {margin-right: 0; padding-right: 0; border:none !important;}
+				//.lang a:not(.active) {margin-top: 2px;}
+				.lang a:not(.active):hover {opacity: .5;}
+	
+	.home .main-intro {position: absolute; top: 0; left: 0; right: 0; margin:0 auto; display: inline-block;}
+		.main-intro .logo {display: inline-block; overflow: hidden; margin:0 auto; width: 100%;}
+			.main-intro .logo > img {width: auto; height: 100%; display:block;}
+			.logo .circle-mask {position: absolute; bottom: 11.15%; right: 7.62%; display: block; width: 77.3195%; height: 79.55%; border-radius: 50%;}
+				.circle-mask .mask {position: absolute; top: 0; left: 0; overflow: hidden; width: 100%; height: 100%; border-radius:50%;}
+					.circle-mask img {position: absolute; bottom: -100px; left: 0; display: block; width: 100%;}
+		.main-intro .text {position: absolute; top: 0; right:-10px; display: inline-block; overflow: hidden; padding: 60px 35px; border-radius: 50%; background-color: #5d2e87;}
+		body[data-lang="en"] .main-intro .text {padding: 70px 35px;}
+			.main-intro .text p {font-size: 26px; color: #fff; font-weight: 700; max-width: 160px; text-align: center;}
+		.btn-descubre, .btn-descubre-detalle {position: absolute; bottom: 3%; left: 0; z-index: 1000; right: 0; margin:0 auto; width: 200px; cursor: pointer; display: block; text-align: center;}
+			.btn-descubre-detalle {bottom: 110px;}
+			.btn-descubre span, .btn-descubre-detalle span {display: block; color: rgba(256,256,256,.44); font-size: 20px; margin-bottom: 20px; transition: all .3s;}
+			.btn-descubre:hover span, .btn-descubre-detalle:hover span {color: #fff !important;}
+			.btn-descubre .arrow-down, .btn-descubre-detalle .arrow-down {display: block; margin:0 auto; -webkit-animation: jump .6s linear alternate infinite; animation: jump .6s linear alternate infinite;}
+
+
+/* -- MUNDO -------------------------------------- */
+
+.mundo {background-color: #da2128; overflow: visible;}
+	.mundo .wrapper {overflow: visible;}
+
+	.mundo .text {position: absolute; top: 50%; left: 6%; display: block; max-width: 525px; z-index: 10; text-align: center; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+		.mundo .text h3 {font-size: 43px; color: #fff; font-weight: 700; margin-bottom: 20px;}
+		.mundo .text p {font-size: 20px; color: #fff; font-weight: 300; line-height: 30px; margin-bottom: 25px; font-family: sans-serif;}
+		.mundo .text a, .escucha .text a {display: inline-block; font-size: 16px; text-transform: uppercase; white-space: nowrap; cursor: pointer; color: #fff; font-weight: 700; padding: 15px 22px; transition: all .3s; border-radius: 35px; box-shadow: 0 0 0 2px transparent inset; background-color: #5d2e87;}
+	
+	.mundo .hand {position: absolute; top: 20%; right: 5%; display: block; width: 67.2%;}
+		.hand img {width: 100%; display: block;}
+	
+	#wp-circle {overflow: visible; position: absolute; top: 1670px; left: 0; right: 0; width: 100%;}
+		.circle-bg {position: absolute; right: 95px; width: 2110px; height: 2115px; border-radius: 50%; background-color: #5d2e87;}
+	
+
+/* -- CAPITANES -------------------------------------- */
+
+.capitanes .wrapper {z-index: 1000;}
+	
+	.capitanes .count {position: absolute; top: 52%; left: 11.5%; font-size: 170px; color: #fff; z-index: 10; font-weight: 700; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+		.count span:first-child {letter-spacing: -60px; vertical-align: middle;}
+		.count span:last-child {letter-spacing: -10px; vertical-align: middle;}
+
+	.capitanes .img-cap {position: absolute; top: 53%; right: 7.2%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	
+	.capitanes .text {position: absolute; top: 66%; right: 42%; font-size: 25px; color: #fff; font-weight: 700; text-align: center; width: 215px; height: 215px; border-radius: 50%; background-color: #faa61a; padding: 64px 30px; z-index: 100; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+
+
+/* -- CARACTERÍSTICAS -------------------------------------- */
+
+.caracteristicas .cont {position: absolute; top: 50%; left: 10%; width: 60%; z-index: 1000; text-align: center; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.caracteristicas .wp {position: absolute; top: 50%; z-index: 1000; text-align: center; transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.cont h3 {display: block; text-align: center; margin-bottom: 60px; font-size: 71px; color: #faa61a; font-weight: 300;}
+	.cont .carac {position: relative; display: block; float: left; width: 28.4%;}
+		.carac:nth-of-type(2) {margin:0 7.3%;}
+		.carac img {display: block; margin:0 auto; margin-bottom: 50px; max-height: 118px;}
+		.carac .text {position: relative; display: block; width: 100%;}
+		.carac:last-child .text {max-width: 190px; margin:0 auto;}
+			.carac h4 {font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 25px; white-space: nowrap;}
+			.carac p {font-size: 18px; line-height: 30px; color: #fff; font-weight: 300; font-family: sans-serif;}
+
+
+/* -- ESCUCHA -------------------------------------- */
+
+.escucha .bg-escucha {position: absolute; top: 50%; left: 13%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+.escucha .text {position: absolute; top: 50%; left: 6%; text-align: center; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.escucha h3 {color: #fff; font-size: 97px; font-weight: 300;} 
+	.escucha a {background-color: #30104D !important;}
+		.escucha .text a:hover {box-shadow: 0 0 0 2px #30104D inset !important; color: #30104D !important; background-color: transparent !important;}
+
+.escucha .player {position: absolute; top: 55%; right: 7.2%; width: 51.25%; text-align: center; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.escucha .player .map {position: relative; display: block; overflow: hidden; width: 100%; margin:0 auto; margin-bottom: -50px; background: url(../img/escuchar-map.jpg); background-size: cover; background-repeat: no-repeat; background-position: -35px center; border-radius: 50%; padding-bottom: 100%;}
+		.player .map ul {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%;}
+		.player .map li {position: absolute; cursor: pointer; transition: all .3s;}
+		.player .map li:not(.selected):hover {opacity: .7 !important;}
+			.player .map li#peru {top: 335px; left: 210px;}
+			.player .map li#peru2 {top: 342px; left: 225px;}
+			.player .map li#usa {top: 240px; left: 195px;}
+			.player .map li#usa2 {top: 232px; left: 175px;}
+			.player .map li#usa3 {top: 222px; left: 185px;}
+			.player .map li#francia {top: 190px; left: 380px;}
+			.player .map li#francia2 {top: 203px; left: 400px;}
+			.player .map li#francia3 {top: 195px; left: 390px;}
+		
+			.player .map li.selected {z-index: 10;}
+			.player .map li .selected {position: absolute; top: 0; left: 0; opacity: 0; transition: all .3s;}
+			.player .map li.selected img.selected {opacity: 1 !important;}
+
+	.escucha .player .controls {position: relative; display: block; overflow: hidden; width: 100%; margin-bottom: -25px; margin-top: -145px;}
+		.controls div {position: relative; display: inline-block; vertical-align: middle; cursor: pointer; transition: all .3s;}
+		.controls div:hover {opacity: .7 !important;}
+		.controls div:active {transform: scale(.9) !important;}
+		.controls .play {margin:0 60px;}
+			.play .btn-play {position: absolute; top: 0; left: 0; opacity: 0; pointer-events:none; transition: all .3s;}
+			.play.paused .btn-play {opacity: 1 !important; pointer-events:auto;}
+	
+	.escucha .player .time {display: block; width: 100%; margin-bottom: 15px; color: #fff; font-size: 39px; font-weight: 300;}
+	.escucha .player .audio-name {display: block; width: 100%; color: #fff; font-size: 21px; font-weight: 300;}
+
+	#shadow-player {width: 100%;}
+
+
+
+/* -- DESCARGAR -------------------------------------- */
+
+.bg-descargar {position: absolute; top: 48%; left: -31%; right: 0; margin:0 auto; height: 70vh; z-index: 100; //width: 74.8%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+.descargar .wrapper > .text {position: absolute; top: 36%; right: 18%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.descargar .text h3 {font-size: 80px; color: #fff; font-weight: 300;}
+	.descargar .text p {font-size: 17px; padding-left: 105px; color: #fff; margin-top: 5px;}
+		.descargar .text p i {vertical-align: middle; margin-left: 5px; font-size: 35px;}
+
+.btn-descargar {position: absolute; top: 68%; left: 11%; width: 345px; height: 345px; cursor: pointer; text-align: center; border-radius: 50%; z-index: 100; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.btn-descargar .btn-apple, .btn-descargar .btn-android {position: absolute; top: 50%; width: 100%; height: 100%; border-radius: 50%; background-color: #fff; transition: all .3s cubic-bezier(.6,-0.37,.28,1.46) ; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.btn-descargar:not(.clicked):hover .btn-apple, .btn-descargar:not(.clicked):hover .btn-android {background-color: #000; transition: all .3s ; transition-delay: 0s !important;}
+	.btn-descargar .btn-apple:hover, .btn-descargar .btn-android:hover {background-color: #000; transition: all .3s; transition-delay: 0s !important;}
+	.btn-descargar .btn-apple {left: 0;}
+	.btn-descargar .btn-android {right: 0;}
+		.btn-descargar .btn-apple a, .btn-descargar .btn-android a {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;}
+		.btn-descargar .btn-apple i, .btn-descargar .btn-android i {position: absolute; top: 50%; left: 0; right: 0; margin:0 auto; opacity: 0; font-size: 50px; color: #DA2128; transition: all .3s;}
+	
+	.btn-descargar .text {position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: #da2128; z-index: 10; font-size: 38px; font-weight: 700; padding-top: 130px; transition: all .3s;}
+		.btn-descargar .text span {display: block; margin-bottom: 20px;}
+
+	//.btn-descargar:active {transform: scale(.8); -webkit-transform: scale(.8); -o-transform: scale(.8); -moz-transform: scale(.8);}
+	.btn-descargar.clicked .btn-apple, .btn-descargar.clicked .btn-android {width: 160px !important; height: 160px !important; z-index: 100;}
+	.btn-descargar.clicked .btn-apple i, .btn-descargar.clicked .btn-android i {top: 33% !important; opacity: 1 !important; transition-delay: .5s;}
+	.btn-descargar.clicked .text {opacity: 0 !important; top: 10% !important; z-index: -1;}
+
+
+footer {position: absolute; bottom: 20px; left: 0; display: block; overflow: hidden; width: 100%;}
+	footer .left {position: relative; display: block; float: left;}
+		.left img {display: inline-block; vertical-align: middle; width: 150px; margin-right: 25px;}
+		.left p {display: inline-block; vertical-align: middle; font-size: 18px; color: #fff;}
+			.left span {font-size: 14px; color: rgba(256,256,256,.5);}
+				.left span a {color: rgba(256,256,256,.5); font-weight: 700; transition: all .3s;} 
+				.left span a:hover {color: #fff;}
+	footer .right {position: relative; display: block; float: right;}
+		.right span {display: inline-block; vertical-align: middle; font-size: 18px; color: #fff; font-weight: 700;}
+			.right i {display: inline-block; vertical-align: middle; width: 60px; height: 60px; font-size: 30px; border-radius:50%; transition: all .3s; box-shadow: 0 0 0 2px transparent inset; background-color: #78cdf0; margin-left: 2px; color: #fff; text-align: center; padding-top: 16px;}
+				.right i.fa-facebook {margin-left: 20px; background-color: #537bbd;}
+			.right i a {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
+			.right i:hover {box-shadow: 0 0 0 2px #78cdf0 inset !important; background-color: transparent !important}
+			.right i.fa-facebook:hover {box-shadow: 0 0 0 2px #537bbd inset !important;}
+
+
+/* -- DOTS -------------------------------------- */
+
+.dots {position: fixed; top: 50%; right: 30px; width: 15px; z-index: 1000000; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.dot {display: block; width: 100%; position: relative; height: 15px; border:solid 2px rgba(256,256,256,.4); margin-bottom: 40px; cursor: pointer; transition: all .3s; border-radius: 50%;}
+	.dot.active {border:solid 2px #fff; background-color: #fff;}
+	.dot:hover {border:solid 2px #fff;}
+		.dot:hover::before {opacity: 1 !important; right: 15px !important;}
+	.dot:last-child {margin-bottom: 0;}
+		.dot::before {content:attr(data-dot); position: absolute; top: -5px; right: 5px; white-space: nowrap; padding: 5px 10px; border-radius: 5px; opacity: 0; color: #fff; font-size: 14px; text-transform: uppercase; font-weight: 700; transition: all .3s;}
+
+
+/* -- FAQS -------------------------------------- */
+
+.faqs header .logo img:last-child {position: absolute; top: 0; left: 0; opacity: 1; transition: all .3s;}
+header.white .logo img:first-child {opacity: 1;}
+header.white .logo img:last-child {opacity: 0;}
+header.white .main-nav > ul > li a {color: #da2128;}
+header.white .main-nav > ul > li:last-child a {color: #fff;}
+header.white .lang a {color: #959595; border-right: solid 1px #959595;}
+.faqs footer {position: relative; bottom: 0; margin-top: 15%; z-index: 10;}
+
+.faq, .faq .wrapper {overflow: visible;}
+	.faq h2 {position: absolute; font-size: 133px; color: #da2128; top: 45%; left: 15%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+	.faq .hand {position: absolute; top: 25%; right: 5%; width: 67%;}
+	
+	#wp-circle.circle-faq {top: -20vh; max-width: 100%; height: 120%;}
+		#wp-circle.circle-faq::after {content:''; position: absolute;  bottom: 0; left: 0; width: 100%; height: 50%; background-color: #da2128;}
+		#wp-circle.circle-faq .circle-bg {right: -5%; width: 150%; height: 100%; background-color: #da2128;}
+
+	.faqs-list {position: relative; display: block; width: 100%; margin: 0 auto; z-index: 10; color: #fff;}
+		.faqs-list ul {display: block; width: 95%;  max-width: 850px; margin:0 auto;}
+			.faqs-list ul li {position: relative; margin-top: 100px; display: block; padding-left: 100px;}
+				.faqs-list ul li .number {position: absolute; top: -30px; left: 0; width: 125px; height: 125px; z-index: 5; font-weight: 700; border-radius: 50%; background-color: #5d2e87; font-size: 42px; text-align: center; padding: 44px 0;}
+				.faqs-list ul li h4 {position: relative; z-index: 10; display: block; margin-bottom: 20px; font-size: 20px; line-height: 30px;}
+				.faqs-list ul li p {position: relative; z-index: 10; font-family: 'Arial'; font-size: 18px; line-height: 22px;}
+
+
+	
+
+
+
+
+
+@media screen and (max-width: 1370px){
+
+	.main-intro .text {padding: 40px 20px;}
+	body[data-lang="en"] .main-intro .text {padding: 50px 20px;}
+		.main-intro .text p {font-size: 20px; max-width: 120px;}
+	.capitanes .text {top: 73%;}
+
+	.escucha .text {left: 16%;}
+	.escucha .bg-escucha {left: 23%; width: 320px;}
+	.escucha .player .map {width: 70%; padding-bottom: 70%;}
+		.player .map li#peru {top: 225px; left: 140px;}
+		.player .map li#peru2 {top: 232px; left: 155px;}
+		.player .map li#usa {top: 150px; left: 115px;}
+		.player .map li#usa2 {top: 142px; left: 95px;}
+		.player .map li#usa3 {top: 160px; left: 100px;}
+		.player .map li#francia {top: 120px; left: 255px;}
+		.player .map li#francia2 {top: 133px; left: 265px;}
+		.player .map li#francia3 {top: 126px; left: 260px;}
+	
+	.escucha .player .controls {margin-top: -125px;}
+		.controls .play {width: 80px;}
+			.controls .play img {width: 100%;}
+		.escucha .player .time {font-size: 29px;}
+		.escucha .player .audio-name {font-size: 18px;}
+
+	.btn-descargar {width: 285px; height: 285px; top: 65%; left: 14%;}
+		.btn-descargar .text {padding-top: 110px;}
+		.btn-descargar.clicked .btn-apple, .btn-descargar.clicked .btn-android {width: 48% !important; height: 48% !important; z-index: 100; transition-delay: .2s;}
+
+	.lang {margin-top: 23px;}
+	.home header {padding-top: 2%;}
+		header .logo {width: 150px;}
+		header .main-nav {padding-top: 5px;}
+			.main-nav > ul > li a {font-size: 14px;}
+
+	.close-window {top: 6px !important;}
+
+	.left img {width: 120px; margin-right: 0;}
+	.left p, .right span {font-size: 14px;}
+	.right i {width: 40px; height: 40px; padding-top: 13px; font-size: 18px;}
+
+	.audioguias .bg-descargar {height: initial; width: 40%;}
+//	.audioguias .btn-descargar {top: 80% !important; left: 20% !important;}
+
+	.dots {width: 10px;}
+		.dot {height: 10px; margin-bottom: 25px;}
+
+	.mundo .text h3 {font-size: 38px;}
+	.mundo .text p {font-size: 16px; line-height: 26px;}
+
+	.capitanes .count {font-size: 175px; top: 52%; left: 17%;}
+	.capitanes .text {top: 70%; font-size: 21px; width: 195px; height: 195px; padding: 57px 30px; right: 42%;}
+	.capitanes .img-cap {top: 61%; width: 36%; right: 14.2%;}
+
+	.cont h3 {margin-bottom: 40px; font-size: 60px;}
+	.carac img {width: 100px; margin-bottom: 30px;}
+	.carac h4 {font-size: 35px; margin-bottom: 20px;}
+	.carac p {font-size: 18px; line-height: 28px;}
+
+	.descargar .wrapper > .text {top: 36%; right: 23%;}
+		.descargar .text h3 {font-size: 60px;}
+		.descargar .text p {font-size: 17px; padding-left: 35px;}
+	.bg-descargar {height: 60vh; top: 54%; left: -31%;}
+	.btn-descargar {width: 245px; height: 245px; top: 65%; left: 14%;}
+		.btn-descargar .text {padding-top: 85px; font-size: 28px;}
+		.btn-descargar.clicked .btn-apple i, .btn-descargar.clicked .btn-android i {top: 30% !important;}
+
+		.detalles {margin-bottom: 10% !important;}
+
+	.faq .hand {width: 55%;}
+	.faqs-list {padding-top: 5%;}
+
+}
+
+@media screen and (max-width: 1024px){
+
+	.capitanes .img-cap {width: 400px;}
+	.capitanes .count {font-size: 175px; left: 11%;}
+	.capitanes .text {top: 69%;}
+	.escucha h3 {font-size: 77px;}
+
+	.mundo .text {max-width: 425px;}
+		.mundo .text h3 {font-size: 35px;}
+		.mundo .text p  {font-size: 17px; line-height: 25px;}
+
+	.capitanes .text {top: 72%; width: 185px; height: 185px; font-size: 22px; padding: 52px 20px;}
+
+	.cont h3 {font-size: 50px;}
+	.carac img {width: auto; max-height: 70px; margin-bottom: 30px;}
+	.carac h4 {font-size: 35px; margin-bottom: 15px;}
+	.carac p {font-size: 16px; line-height: 23px;}
+
+	.escucha .player .map {width: 80%; padding-bottom: 80%;}
+
+	.bg-descargar {height: 60vh;}
+	.descargar .wrapper > .text {top: 39%; right: 15%;}
+		.descargar .text h3 {font-size: 60px;}
+		.descargar .text p {font-size: 15px; padding-left: 55px;}
+
+	.audioguias .lang {margin-right: 50px;}
+	.close-window {right: -10px !important;}
+	
+	.detalles h4 {font-size: 75px !important; margin-bottom: 20px !important;}
+	.audioguias .btn-descargar {left: 0 !important;}
+	.audioguias .bg-descargar {top: 62% !important; left: -72% !important;}
+
+	#shadow-player {margin-bottom: 6%;}
+
+	.faq h2 {font-size: 90px;}
+	.faq .hand {width: 65%;}
+	.faqs-list {padding-top: 0;}
+	#wp-circle.circle-faq .circle-bg {width: 250%; right: -50%;}
+
+
+}
+
+@media screen and (max-width:800px){
+
+	.dots, .main-intro .logo > img, .escucha .bg-escucha {display: none;}
+
+	section {min-height: initial !important; padding: 100px 0;}
+	.home {min-height: 100vh !important}
+
+	section > .wrapper {position: relative;}
+
+	.home .main-intro {width: 100% !important;}
+	.logo .circle-mask {top: 55%; left: -2%; width: 500px; height: 500px; right: 0; margin: 0 auto; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+		.circle-mask img {bottom: -5px;}
+		.main-intro .text {top: 35% !important; right: 14%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); -moz-transform: translateY(-50%);}
+
+	.mundo .text {position: relative; top: 0; left: 0; right: 0; margin:0 auto; margin-bottom: 50px; transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0);}
+	.mundo .hand {position: relative; top: 0; right: 40%; width: 135%;}
+	.capitanes .count, .escucha .text, .escucha .player, .bg-descargar, footer, .descargar .wrapper > .text, .btn-descargar, footer {position: relative; left: 0; top: 0; display: block; text-align: center; transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0);}
+	.capitanes .img-cap {position: relative; top: 0; left:0; right: 0; display: block; margin:0 auto; transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0);}
+	.capitanes .text {right: 12%;}
+	
+	.circle-bg {right: 0;}
+
+	.caracteristicas .cont, .caracteristicas .wp {position: relative; left: 0; top: 0; margin:0 auto; display: block; transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0);}
+
+	 .escucha .player {width: 100%; margin-top: 50px;}
+	 	.player .map li#peru {top: 305px; left: 190px;}
+		.player .map li#peru2 {top: 312px; left: 205px;}
+		.player .map li#usa {top: 210px; left: 175px;}
+		.player .map li#usa2 {top: 192px; left: 155px;}
+		.player .map li#usa3 {top: 200px; left: 162px;}
+		.player .map li#francia {top: 170px; left: 355px;}
+		.player .map li#francia2 {top: 184px; left: 365px;}
+		.player .map li#francia3 {top: 178px; left: 360px;}
+
+	.descargar {padding-bottom: 0;}
+
+	.bg-descargar {height: initial; width: 80% !important;}
+	.btn-descargar {margin:0 auto; margin-top: -20%;}
+	.audioguias .bg-descargar {display: block !important; left: 0 !important;}
+	footer {margin-top: 80px; margin-bottom: 20px;}
+
+	.audioguias .home {padding: 0 !important;}
+	.detalles {float: none !important; margin-right:0 !important; margin-bottom: 100px !important; border-radius: 50px !important; padding: 120px 0px !important; width: 100% !important; height: initial !important;}
+	.lista .wrapper {width: 100% !important;}
+
+		
+	.toggle-menu {display: block !important; margin-top: 20px; position: absolute; right: 7px; top: 0;}
+	.audioguias .toggle-menu {right: 57px;}
+	.lang {position: absolute; right: 55px;}
+	header .main-nav {position: absolute !important; display: none;top: 100%; right: -5%; z-index: 100000; padding-top: 5px; width: 110%; text-align: right; padding: 10px 30px; padding-bottom: 20px;background-color: rgba(0,0,0,.2); background-color: #A8171D; padding: 10px 30px; padding-bottom: 20px;}
+		.main-nav > ul > li {display: block; margin: 5px 0; border-bottom: solid 1px rgba(0,0,0,.1);}
+		.main-nav > ul > li:last-child {display: inline-block;}
+	header .wrapper {height: 77px; overflow: visible;}
+
+	footer .right {margin-top: 6px;}
+		.right i.fa-facebook {margin-left: 10px;}
+
+	.faq {padding-top: 160px; overflow: hidden;}
+	.faq > .wrapper {overflow: hidden}
+	.faq .hand {width: 65%; position: relative; float: right;}
+	.faq h2 {font-size: 70px; top: 25%;}
+	header.white .toggle-menu span {background-color: #da2128;}
+	#wp-circle.circle-faq {top: 0; height: 100%; max-width: 700px; width: 700px;}
+		#wp-circle.circle-faq::after {left: -50px; width: 800px;}
+	header.white .main-nav > ul > li a {color: #fff;}
+	.faqs-list {margin-top: -30vh;}
+	.faqs-list ul {margin-top: 200px;}
+		.faqs-list ul li h4 {font-size: 18px; line-height: 24px;}
+		.faqs-list ul li p {font-size: 15px; line-height: 20px;}
+		.faqs-list ul li .number {width: 85px; height: 85px; padding: 24px 0; top: 0;}
+
+
+}
+
+@media screen and (max-width: 480px){
+
+	.capitanes .count {font-size: 115px;}
+	.count span:first-child {letter-spacing: -30px; vertical-align: middle;}
+	.count span:last-child {letter-spacing: -5px;}
+
+	.caracteristicas .cont {width: 90%;}
+		.cont .carac {width: 100%; margin:0 auto !important; margin-bottom: 30px !important;}
+			.carac p {width: 200px; margin:0 auto;}
+
+	.player .map ul {top: -110px; left: -120px;}
+	.map + img {width: 100%; margin-bottom: 40px;}
+
+	footer .left {float: none;}
+		.left p {width: 270px; margin:0 auto; margin-top: 20px; display: block;}
+	footer .right {float: none; margin-top: 30px;}
+		.right i.fa-facebook {margin-left: 5px; margin-right: 10px;}
+
+	.audioguias .mapa, .btn-descubre-detalles {display: none;}
+	.audioguias .home {min-height: initial !important; overflow: visible;}
+
+	.detalles {padding: 160px 0 !important; background-color: rgb(43, 43, 43) !important;  padding: 0 !important;}
+		.detalles h4 {font-size: 55px !important; margin-bottom: 10px !important;}
+		.detalles .menu-detalles {margin-bottom: 10px;}
+		.detalles .wrap-table {max-width: 100% !important; overflow: auto !important;}
+		table {width: 700px !important}
+		table thead th {color: rgba(256,256,256,.6);}
+	.left span {display: block;}
+	
+	table td:nth-child(3)::after, table th:nth-child(3)::after, table td:nth-child(2)::after {box-shadow: -50px 0 20px -20px #2B2B2B inset !important;}
+
+	.logo .circle-mask {width: 370px; height: 370px;}
+	.main-intro .text {top: 32% !important; right: 9%;}
+
+	.faq .hand {display: none;}
+	.faq h2 {position: relative; top: 0; left: 0; text-align: center; transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0); margin-bottom: 50%;}
+	.faqs-list ul {margin-top: 30%; }
+		.faqs-list ul li {padding-left: 0;}
+			.faqs-list ul li .number {width: 55px; height: 55px; padding: 15px 0; font-size: 30px;}
+			.faqs-list ul li h4 {padding-left: 70px; margin-bottom: 10px;}
+	.faqs footer {margin-top: 120px;}
+	.faqs header.scrolled {background-color: #9C161B;}
+	.faqs header.scrolled .logo img:first-child {opacity: 0;}
+	.faqs header.scrolled .logo img:last-child {opacity: 1;}
+	.faqs header.scrolled .toggle-menu span {background-color: #fff; }
+	.faqs header.scrolled .lang a {color: #fff; border-right: solid 1px #fff; }
+
+
+}
+
+
+@media screen and (max-width: 380px){
+
+	.logo .circle-mask {width: 250px; height: 250px; left: -5%; top: 59%;}
+	.main-intro .text {right: 6%; top: 35% !important; padding: 32px 15px;}
+	body[data-lang="en"] .main-intro .text {padding: 40px 15px;}
+		.main-intro .text p {font-size: 14px; max-width: 90px;}
+
+	.home header {background-color: #9C161B;}
+		header .wrapper {height: 65px;}
+			header .logo {width: 110px; margin-top: 6px;}
+				header .logo img {width: 100% !important;}
+			.lang {margin-top: 18px;}
+			.toggle-menu {margin-top: 15px;}
+
+	.capitanes .count {font-size: 85px;}
+	.capitanes .img-cap {width: 100%;}
+	.capitanes .text {right: 0; left: 0; margin: 0 auto; top: 0; position: relative; margin-top: 0; transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0); margin-bottom: -60px; }
+
+	.cont h3 {font-size: 30px; margin-bottom: 30px;}
+	.mundo .hand {width: 135%; right: 45%;}
+	.carac:last-child .text {max-width: 500px;}
+
+	.player .map ul {top: -140px; left: -120px;}
+		.player .map li {width: 30px;}
+			.player .map li img {width: 100%;}
+		.player .map li#peru {top: 275px; left: 190px;}
+		.player .map li#peru2 {top: 282px; left: 205px;}
+		.player .map li#usa {top: 220px; left: 175px;}
+		.player .map li#usa2 {top: 212px; left: 155px;}
+		.player .map li#usa3 {top: 205px; left: 162px;}
+		.player .map li#francia {top: 210px; left: 285px;}
+		.player .map li#francia2 {top: 224px; left: 305px;}
+		.player .map li#francia3 {top: 218px; left: 395px;}
+	.escucha .player .controls {margin-top: -85px;}
+
+	.descargar .text h3 {font-size: 40px;}
+	.descargar .text p {font-size: 15px; padding-left: 10px; margin-bottom: 40px; width: 80%;max-width: 240px; margin: 0 auto; margin-bottom: 40px; margin-top: 10px;}
+		.descargar .text p i {margin-top: 10px;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes jump {
+
+	from {transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0);}
+	to {transform: translateY(10px); -webkit-transform: translateY(10px); -o-transform: translateY(10px); -moz-transform: translateY(10px);}
+
+}
+@keyframes jump {
+
+ 	from {transform: translateY(0); -webkit-transform: translateY(0); -o-transform: translateY(0); -moz-transform: translateY(0);}
+	to {transform: translateY(10px); -webkit-transform: translateY(10px); -o-transform: translateY(10px); -moz-transform: translateY(10px);}
+
+}
+
+@-webkit-keyframes gira {
+	    
+	from{-webkit-transform: rotate(360deg);}
+	to{-webkit-transform: rotate(0deg);}
+
+}
+           
+@keyframes gira {
+    
+    from{-webkit-transform: rotate(360deg); transform: rotate(360deg)}
+	to{-webkit-transform: rotate(0); transform: rotate(0)}
+
+}
